@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surrey Fly Screen - Premium Retractable Fly Screens & Blinds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #a8d8ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #ff6b35;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .secondary-button:hover {
+            background: white;
+            color: #1e3c72;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1e3c72;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-features li {
+            padding: 0.5rem 0;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        .about-features li:before {
+            content: "✓ ";
+            color: #ff6b35;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .testimonials {
+            background: #f8f9fa;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .stars {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+        }
+
+        form button {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        form button:hover {
+            background: #e55a2a;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #a8d8ff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #a8d8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .secondary-button {
+                display: block;
+                margin: 1rem 0 0 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Surrey Fly Screen</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Premium Retractable Fly Screens for Surrey</h1>
+        <p>Made-to-measure fly screen solutions with 10-year warranty. Featuring Gozito retractable screens and Blind Screen innovative products</p>
+        <a href="#contact" class="cta-button">Get a Free Quote</a>
+        <a href="#services" class="secondary-button">View Services</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Products & Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <div class="icon">🔄</div>
+                <h3>Gozito Retractable Screens</h3>
+                <p>Premium Italian-designed retractable fly screens. Fully concealed when not in use. Available for bifold doors, patio sliding doors, French doors, and windows. FSA-approved for food safety compliance.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🪟</div>
+                <h3>Blind Screen Window Solutions</h3>
+                <p>Innovative window covering solutions combining style and functionality. Providing comprehensive insect protection without compromising views or aesthetics.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📋</div>
+                <h3>Made-to-Measure Fitting</h3>
+                <p>Custom-fitted screens tailored to your exact specifications. Our experts take precise measurements for a perfect fit on any opening size.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔧</div>
+                <h3>Professional Installation</h3>
+                <p>Expert installation service for all products. No ground rails required - our systems retrofit to any door or window configuration.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🌍</div>
+                <h3>Eco-Friendly Protection</h3>
+                <p>Fibre glass mesh provides clear, uninterrupted views while protecting the environment. 2% of orders support Buglife, protecting insect populations.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏢</div>
+                <h3>Commercial & Residential</h3>
+                <p>Solutions for homes, restaurants, bars, cafes, offices, schools, nurseries, conservatories, and garden rooms. Wind-tested to 120km/h.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>Why Choose Surrey Fly Screen?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We partner with Europe's leading fly screen manufacturers - Gozito and Blind Screen - to bring you the latest in retractable insect protection technology. Our mission is to help Surrey residents enjoy fresh air without unwanted pests.</p>
+                <p>Every installation is handled by our expert team with precision and care. We're committed to providing premium quality solutions at competitive prices, backed by comprehensive warranties.</p>
+                <ul class="about-features">
+                    <li>10-Year Warranty on Gozito Screens</li>
+                    <li>Fully Retractable Design</li>
+                    <li>No Ground Rails Required</li>
+                    <li>Wide Colour Range</li>
+                    <li>Wind-Tested to 120km/h</li>
+                    <li>FSA-Approved for Commercial Use</li>
+                </ul>
+            </div>
+            <div>
+                <svg viewBox="0 0 200 200" style="width: 100%; max-width: 300px;">
+                    <rect width="200" height="200" fill="#e8f0f7" rx="10"/>
+                    <rect x="30" y="30" width="140" height="140" fill="#2a5298" rx="5"/>
+                    <circle cx="100" cy="60" r="15" fill="white" opacity="0.8"/>
+                    <circle cx="70" cy="100" r="12" fill="white" opacity="0.8"/>
+                    <circle cx="130" cy="110" r="12" fill="white" opacity="0.8"/>
+                    <circle cx="100" cy="150" r="12" fill="white" opacity="0.8"/>
+                    <line x1="100" y1="75" x2="100" y2="135" stroke="white" stroke-width="2" opacity="0.6"/>
+                    <line x1="70" y1="100" x2="130" y2="100" stroke="white" stroke-width="2" opacity="0.6"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Love how the Gozito screens completely retract out of sight. They look sleek, work beautifully, and the Fibre glass mesh gives perfect views. The 10-year warranty gives me peace of mind."</p>
+                <div class="testimonial-author">- Sarah M., Guildford</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Installation was smooth and professional. No ground rails means they fitted perfectly to our bifold doors. Best investment for enjoying summer without the flies!"</p>
+                <div class="testimonial-author">- James T., Woking</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"As a restaurant owner, FSA compliance is critical. These screens are fully approved and our customers love the clear views. Highly professional team."</p>
+                <div class="testimonial-author">- Marco D., Reigate</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Wind-tested to 120km/h and they still work perfectly. Quality is outstanding. Great to know 2% supports Buglife - protecting the environment while protecting our home."</p>
+                <div class="testimonial-author">- Emma L., Epsom</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📍 Location</h3>
+                <p>Serving all of Surrey</p>
+                <p>Local installation team</p>
+            </div>
+            <div class="contact-item">
+                <h3>📞 Phone</h3>
+                <p>Available upon request</p>
+                <p>Mon-Fri: 8am-6pm</p>
+            </div>
+            <div class="contact-item">
+                <h3>✉️ Email</h3>
+                <p>info@surreyflyscreen.co.uk</p>
+                <p>We'll respond within 24 hours</p>
+            </div>
+        </div>
+
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Phone Number">
+            <textarea placeholder="Tell us about your project..."></textarea>
+            <button type="submit">Request a Free Quote</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Surrey Fly Screen</h4>
+                <p>Premium retractable fly screens featuring Gozito and Blind Screen products. Serving Surrey with eco-friendly insect protection.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Products & Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Partners</h4>
+                <ul>
+                    <li><a href="https://gozito.co.uk" target="_blank">Gozito Retractable Screens</a></li>
+                    <li><a href="https://blindscreen.com" target="_blank">Blind Screen Solutions</a></li>
+                    <li><a href="https://www.buglife.org.uk" target="_blank">Buglife Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Surrey Fly Screen. All rights reserved. | <a href="http://surreyflyscreen.co.uk" target="_blank">surreyflyscreen.co.uk</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your enquiry! We will contact you within 24 hours.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
