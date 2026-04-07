@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="scroll-smooth">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Surrey Fly Screens | Expert Installation Across Surrey</title>
   <meta name="description" content="Bespoke fly screens for windows, doors, and bi-fold openings. Expertly installed across Surrey within 5–7 days. Free, no-obligation quotes."/>
+  <link rel="canonical" href="https://surreyflyscreens.co.uk/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://surreyflyscreens.co.uk/"/>
+  <meta property="og:title" content="Surrey Fly Screens | Expert Installation Across Surrey"/>
+  <meta property="og:description" content="Bespoke fly screens for windows, doors, and bi-fold openings. Expertly installed across Surrey within 5–7 days. Free, no-obligation quotes."/>
+  <meta property="og:image" content="https://surreyflyscreens.co.uk/public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:site_name" content="Surrey Fly Screens"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Surrey Fly Screens | Expert Installation Across Surrey"/>
+  <meta name="twitter:description" content="Bespoke fly screens for windows, doors, and bi-fold openings. Expertly installed across Surrey within 5–7 days."/>
+  <meta name="twitter:image" content="https://surreyflyscreens.co.uk/public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg"/>
+
+  <!-- Preload LCP hero image -->
+  <link rel="preload" as="image" href="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg"/>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -23,8 +42,9 @@
     #top-bar{height:3px;background:linear-gradient(90deg,#1A3C2E 0%,#4A9B72 50%,#2E6B4F 100%);position:fixed;top:0;left:0;right:0;z-index:60}
 
     /* ── Nav ── */
-    #main-nav{position:fixed;top:3px;left:0;right:0;z-index:55;background:white;border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
-    #main-nav.scrolled{border-bottom-color:#e5e7eb;box-shadow:0 2px 24px rgba(0,0,0,.07)}
+    #main-nav{position:fixed;top:3px;left:0;right:0;z-index:55;background:white;will-change:transform}
+    #main-nav::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:#e5e7eb;box-shadow:0 2px 24px rgba(0,0,0,.07);opacity:0;transition:opacity .3s;pointer-events:none}
+    #main-nav.scrolled::after{opacity:1}
 
     /* ── Mobile menu ── */
     #mobile-menu{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.22,1,.36,1)}
@@ -84,7 +104,7 @@
     .faq-item.open .faq-icon{transform:rotate(45deg)}
 
     /* ── Floating CTA ── */
-    #float-cta{position:fixed;bottom:24px;right:24px;z-index:100;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none}
+    #float-cta{position:fixed;bottom:24px;right:24px;z-index:100;opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s ease;pointer-events:none;will-change:transform,opacity}
     #float-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
 
     /* ── Filter pills ── */
@@ -112,6 +132,14 @@
     ::selection{background:#4A9B72;color:white}
     .checkmark{color:#2E6B4F;font-size:14px;margin-right:6px}
   </style>
+
+  <!-- LocalBusiness + FAQ Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Surrey Fly Screens","url":"https://surreyflyscreens.co.uk","telephone":"+441234567890","email":"info@surreyflyscreens.co.uk","description":"Bespoke fly screens for windows, doors, and bi-fold openings. Expertly installed across Surrey.","address":{"@type":"PostalAddress","addressRegion":"Surrey","addressCountry":"GB"},"areaServed":["Guildford","Woking","Reigate","Epsom","Dorking","Leatherhead","Surrey"],"priceRange":"££","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],"image":"https://surreyflyscreens.co.uk/public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does installation take?","acceptedAnswer":{"@type":"Answer","text":"Most installations are completed in a single morning visit. Larger projects — such as full-house bi-fold systems — may take a full day. We'll give you a realistic time estimate at your free survey."}},{"@type":"Question","name":"Do you offer a guarantee?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every installation comes with a 5-year workmanship guarantee. If anything is wrong with how we fitted your screens, we'll fix it — no charge."}},{"@type":"Question","name":"Can you fit screens to bi-fold and sliding doors?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Bi-fold and sliding door systems are one of our specialities. We offer both fixed-frame and retractable options designed to integrate cleanly with your doors."}},{"@type":"Question","name":"What areas do you cover?","acceptedAnswer":{"@type":"Answer","text":"We cover all of Surrey, including Guildford, Woking, Reigate, Epsom, Dorking, Leatherhead, and surrounding areas."}},{"@type":"Question","name":"How soon can you install?","acceptedAnswer":{"@type":"Answer","text":"We typically book surveys within 2–3 days and complete installation within 5–7 days of the survey — subject to material availability."}}]}
+  </script>
 </head>
 
 <body>
@@ -186,13 +214,13 @@
 <!-- SECTION: Hero -->
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden" style="padding-top:75px">
   <div class="absolute inset-0 z-0">
-    <img src="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg" alt="Premium Surrey fly screen — lush English garden through mesh" class="w-full h-full object-cover" loading="eager"/>
+    <img src="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Hero%20Image%20v1.jpg" alt="Premium Surrey fly screen — lush English garden through mesh" class="w-full h-full object-cover" loading="eager" fetchpriority="high"/>
     <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(0,0,0,.68) 0%,rgba(15,40,28,.55) 45%,rgba(0,0,0,.38) 100%)"></div>
   </div>
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
     <!-- Kicker pill -->
-    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border border-white/20 backdrop-blur-sm" style="background:rgba(46,107,79,.45)">
+    <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border border-white/20" style="background:rgba(46,107,79,.7)">
       <span class="w-1.5 h-1.5 rounded-full bg-green-300 flex-shrink-0"></span>
       <span class="text-green-200 text-xs font-semibold uppercase tracking-[.15em]">Surrey's Fly Screen Specialists</span>
     </div>
@@ -1069,32 +1097,38 @@
 <!-- ════════════════════════════════ SCRIPTS ════════════════════════════════ -->
 <script>
 
-// ── Nav scroll ──
+// ── Nav + scroll spy + float CTA — single RAF-gated scroll handler ──
 const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-// ── Scroll spy — active nav ──
 const desktopNavLinks = document.querySelectorAll('.nav-link[data-section]');
 const spySections = ['services','about','gallery','testimonials','faq','contact']
   .map(id => document.getElementById(id)).filter(Boolean);
 
-function updateActiveNav() {
-  const scrollY = window.scrollY + 120;
+function updateActiveNav(scrollY) {
   let current = '';
   spySections.forEach(s => {
-    if (s.offsetTop <= scrollY) current = s.id;
+    if (s.offsetTop <= scrollY + 120) current = s.id;
   });
-  // Map testimonials → gallery (no nav item for testimonials)
   if (current === 'testimonials') current = 'gallery';
   desktopNavLinks.forEach(link => {
-    const active = link.dataset.section === current;
-    link.classList.toggle('active', active);
+    link.classList.toggle('active', link.dataset.section === current);
   });
 }
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
+
+const floatCtaEl = document.getElementById('float-cta');
+let scrollTicking = false;
+window.addEventListener('scroll', () => {
+  if (!scrollTicking) {
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 40);
+      if (floatCtaEl) floatCtaEl.classList.toggle('show', y > 300);
+      updateActiveNav(y);
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+}, { passive: true });
+updateActiveNav(window.scrollY);
 
 // ── Hamburger ──
 const hamBtn = document.getElementById('ham-btn');
@@ -1328,11 +1362,7 @@ function toggleFaq(btn) {
   }
 }
 
-// ── Floating CTA ──
-const floatCta = document.getElementById('float-cta');
-window.addEventListener('scroll', () => {
-  floatCta.classList.toggle('show', window.scrollY > 300);
-}, { passive: true });
+// ── Floating CTA — handled in merged scroll handler above ──
 
 // ── Quote form ──
 // ── Input sanitiser: strips tags, controls, limits length ──
@@ -1418,14 +1448,12 @@ document.addEventListener('keydown', e => {
 // ── Scroll dot animation ──
 const scrollDot = document.getElementById('scroll-dot');
 if (scrollDot) {
-  setInterval(() => {
-    scrollDot.animate([
-      { transform: 'translateY(0)', opacity: 1 },
-      { transform: 'translateY(12px)', opacity: 0 },
-      { transform: 'translateY(0)', opacity: 0 },
-      { transform: 'translateY(0)', opacity: 1 },
-    ], { duration: 1800, iterations: Infinity });
-  }, 0);
+  scrollDot.animate([
+    { transform: 'translateY(0)', opacity: 1 },
+    { transform: 'translateY(12px)', opacity: 0 },
+    { transform: 'translateY(0)', opacity: 0 },
+    { transform: 'translateY(0)', opacity: 1 },
+  ], { duration: 1800, iterations: Infinity });
 }
 
 </script>
