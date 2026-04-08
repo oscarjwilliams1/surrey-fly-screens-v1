@@ -1,33 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 108" width="360" height="108">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96">
   <!-- White background -->
-  <rect width="360" height="108" fill="#ffffff" rx="12"/>
+  <rect width="320" height="96" fill="#ffffff" rx="10"/>
 
-  <!-- Icon: solid green rounded square, 84×84, centered vertically -->
-  <!-- x=12, y=12, w=84, h=84 → rows 84/6=14px each, cols 84/3=28px each -->
-  <rect x="12" y="12" width="84" height="84" rx="9" fill="#2E6B4F"/>
+  <!-- Icon: 60×60, vertically centred in 96px canvas → y=18 -->
+  <!-- 6 equal rows = 10px each, 3 equal cols = 20px each -->
+  <rect x="12" y="18" width="60" height="60" rx="7" fill="#2E6B4F"/>
 
-  <!-- Grid lines clipped to icon rect (equal spacing guaranteed) -->
   <clipPath id="ic">
-    <rect x="12" y="12" width="84" height="84" rx="9"/>
+    <rect x="12" y="18" width="60" height="60" rx="7"/>
   </clipPath>
-  <g clip-path="url(#ic)" stroke="white" stroke-width="0.85" opacity="0.9">
-    <!-- 5 horizontal lines dividing into 6 equal rows of 14px -->
-    <line x1="12" y1="26" x2="96" y2="26"/>
-    <line x1="12" y1="40" x2="96" y2="40"/>
-    <line x1="12" y1="54" x2="96" y2="54"/>
-    <line x1="12" y1="68" x2="96" y2="68"/>
-    <line x1="12" y1="82" x2="96" y2="82"/>
-    <!-- 2 vertical lines dividing into 3 equal columns of 28px -->
-    <line x1="40" y1="12" x2="40" y2="96"/>
-    <line x1="68" y1="12" x2="68" y2="96"/>
+  <g clip-path="url(#ic)" stroke="white" stroke-width="0.75" opacity="0.9">
+    <!-- 5 horizontal lines → 6 equal rows of 10px -->
+    <line x1="12" y1="28" x2="72" y2="28"/>
+    <line x1="12" y1="38" x2="72" y2="38"/>
+    <line x1="12" y1="48" x2="72" y2="48"/>
+    <line x1="12" y1="58" x2="72" y2="58"/>
+    <line x1="12" y1="68" x2="72" y2="68"/>
+    <!-- 2 vertical lines → 3 equal columns of 20px -->
+    <line x1="32" y1="18" x2="32" y2="78"/>
+    <line x1="52" y1="18" x2="52" y2="78"/>
   </g>
 
   <!-- Icon border -->
-  <rect x="12" y="12" width="84" height="84" rx="9" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="12" y="18" width="60" height="60" rx="7" fill="none" stroke="white" stroke-width="1.8"/>
 
-  <!-- Surrey (baseline aligned to icon visual centre) -->
-  <text x="112" y="67" font-family="Georgia,'Times New Roman',serif" font-size="48" font-weight="700" fill="#1A3C2E" letter-spacing="-2">Surrey</text>
+  <!-- Surrey (baseline ~y=64) -->
+  <text x="86" y="62" font-family="Georgia,'Times New Roman',serif" font-size="42" font-weight="700" fill="#1A3C2E" letter-spacing="-1.5">Surrey</text>
 
   <!-- FLY SCREENS -->
-  <text x="114" y="90" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#4A9B72" letter-spacing="5">FLY SCREENS</text>
+  <text x="88" y="82" font-family="Arial,Helvetica,sans-serif" font-size="12.5" font-weight="700" fill="#4A9B72" letter-spacing="4.5">FLY SCREENS</text>
 </svg>
