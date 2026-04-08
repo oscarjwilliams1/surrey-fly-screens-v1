@@ -70,15 +70,15 @@
     .service-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px rgba(26,60,46,.13)}
 
     /* ── Gallery ── */
-    .gal-cols{columns:3 160px;column-gap:10px}
-    .gal-item{break-inside:avoid;margin-bottom:10px;position:relative;overflow:hidden;border-radius:2px;cursor:pointer}
-    .gal-item img{width:100%;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+    .gal-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gal-item{position:relative;overflow:hidden;border-radius:2px;cursor:pointer;aspect-ratio:4/3}
+    .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
     .gal-item:hover img{transform:scale(1.04)}
     .gal-item .gal-overlay{position:absolute;inset:0;background:rgba(26,60,46,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;transition:opacity .3s ease}
     .gal-item:hover .gal-overlay{opacity:1}
     .gal-item.hidden-item{display:none}
-    @media(max-width:640px){.gal-cols{columns:2 120px}}
-    @media(max-width:380px){.gal-cols{columns:1}}
+    @media(max-width:640px){.gal-cols{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:380px){.gal-cols{grid-template-columns:1fr}}
 
     /* ── Lightbox ── */
     #lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:16px}
@@ -286,14 +286,14 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
         <div>
-          <p class="font-display font-bold text-xl text-gray-900">Free</p>
-          <p class="text-gray-500 text-sm">Site Survey</p>
+          <p class="font-display font-bold text-xl text-gray-900">Survey</p>
+          <p class="text-gray-500 text-sm">Free Site</p>
         </div>
       </div>
 
       <div class="reveal d2 flex items-center gap-4">
         <div class="w-11 h-11 rounded flex items-center justify-center flex-shrink-0" style="background:#e8f3ed;border:1px solid #c2dece">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
         </div>
         <div>
           <p class="font-display font-bold text-xl text-gray-900">5-Year</p>
@@ -306,7 +306,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div>
-          <p class="font-display font-bold text-xl text-gray-900">Surrey</p>
+          <p class="font-display font-bold text-xl text-gray-900">Location</p>
           <p class="text-gray-500 text-sm">All Across Surrey</p>
         </div>
       </div>
@@ -329,7 +329,7 @@
       <!-- Card 1: Window Screens -->
       <div class="service-card reveal bg-white border border-gray-200 rounded-sm overflow-hidden">
         <div class="relative h-52 overflow-hidden">
-          <img src="public/images/Surrey%20Fly%20Screens/NEOSCENICA%20EXTERNAL%20VIEW%202.jpg" alt="Window fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
+          <img src="public/images/Surrey%20Fly%20Screens/Estetika%201.jpg" alt="Window fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
         </div>
         <div class="p-6">
           <h3 class="font-display text-xl text-gray-900 mb-2">Window Fly Screens</h3>
@@ -346,7 +346,7 @@
       <!-- Card 2: Door Screens -->
       <div class="service-card reveal d1 bg-white border border-gray-200 rounded-sm overflow-hidden">
         <div class="relative h-52 overflow-hidden">
-          <img src="public/images/Surrey%20Fly%20Screens/NEOSCENICA%20BEDROOM%20BALCONY%20INTERNAL%20VIEW.jpg" alt="Door fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
+          <img src="public/images/Surrey%20Fly%20Screens/NEOSCENICA%20BEDROOM%20BALCONY%20VIEW.jpg" alt="Door fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
         </div>
         <div class="p-6">
           <h3 class="font-display text-xl text-gray-900 mb-2">Door Fly Screens</h3>
@@ -364,7 +364,7 @@
       <div class="service-card reveal d2 bg-white border border-gray-200 rounded-sm overflow-hidden relative">
         <div class="absolute top-3 right-3 z-10 px-3 py-1 rounded-full text-xs font-bold text-white" style="background:#C8964E">Most Popular</div>
         <div class="relative h-52 overflow-hidden">
-          <img src="public/images/Surrey%20Fly%20Screens/Estetika%201.jpg" alt="Bi-fold door fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
+          <img src="public/images/Surrey%20Fly%20Screens/NEOSCENICA%20EXTERNAL%20VIEW%202.jpg" alt="Bi-fold door fly screens" class="w-full h-full object-cover"/ loading="lazy"/>
         </div>
         <div class="p-6">
           <h3 class="font-display text-xl text-gray-900 mb-2">Bi-Fold Door Screens</h3>
@@ -414,9 +414,15 @@
           Designed for UK Homes
         </span>
         <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white mt-3 mb-5 leading-tight">Open up.<br/>Let the outside in.</h2>
-        <p class="text-white/70 text-base leading-relaxed mb-8">
-          Our screens are discreet, durable, and engineered to complement any property — from Victorian terrace to contemporary barn conversion. Open your doors freely all summer long.
+        <p class="text-white/70 text-base leading-relaxed mb-5">
+          Our screens are discreet, durable, and engineered to complement any property — from Victorian terrace to contemporary barn conversion. Backed by 10+ years of interior design experience, we know exactly what works in a home and what doesn't.
         </p>
+        <div class="flex items-center gap-2 mb-8">
+          <div class="w-7 h-7 rounded flex items-center justify-center flex-shrink-0" style="background:rgba(74,155,114,.25);border:1px solid rgba(74,155,114,.4)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4A9B72" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="text-white/60 text-sm">10+ years of interior design experience</span>
+        </div>
         <a href="#services" class="btn-white-outline inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm">
           See All Services
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -630,7 +636,7 @@
     <div class="reveal">
       <div class="ba-wrap rounded-sm overflow-hidden select-none" id="ba-wrap" style="height:420px;max-height:60vw">
         <!-- Before image (full width base) -->
-        <img src="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/After%20Image%20v1.jpg" alt="Before fly screen installation — garden through mesh" class="w-full h-full object-cover" draggable="false"/ loading="lazy"/>
+        <img src="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Wasp%20Before%20Photo.png" alt="Before fly screen installation — wasp entering through open window" class="w-full h-full object-cover" draggable="false"/ loading="lazy"/>
         <!-- After image (clipped) -->
         <div class="ba-after" id="ba-after" style="width:50%">
           <img src="public/images/Surrey%20Fly%20Screens/Nano%20Banana%202%20Images/Before%20Image.jpg" alt="After fly screen installation — clear garden view" style="width:900px;max-width:none" draggable="false" id="ba-after-img"/ loading="lazy"/>
@@ -662,11 +668,11 @@
 
       <div class="faq-item reveal bg-white border border-gray-200 rounded-sm overflow-hidden">
         <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-gray-900" onclick="toggleFaq(this)" aria-expanded="false">
-          Do you work on listed or heritage properties?
+          Which areas of Surrey do you cover?
           <svg class="faq-icon flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Yes — our retractable screen range is specifically designed with listed and heritage properties in mind. The 23mm housing cassette is unobtrusive and can often be fitted without planning permission. We assess each property individually and will advise during the free survey.</p>
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">We cover the entire county — including Guildford, Woking, Reigate, Dorking, Epsom, Leatherhead, Farnham, Godalming, Haslemere, Caterham, Oxted, Weybridge, Esher, and Cobham. Not sure if we reach you? Just call or drop us a message.</p>
         </div>
       </div>
 
@@ -682,16 +688,6 @@
 
       <div class="faq-item reveal d2 bg-white border border-gray-200 rounded-sm overflow-hidden">
         <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-gray-900" onclick="toggleFaq(this)" aria-expanded="false">
-          Can I remove the screens for winter?
-          <svg class="faq-icon flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </button>
-        <div class="faq-body">
-          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Window screens are designed to be easily removed and stored without tools. Door and retractable screens can be left in place year-round — they're built to withstand British weather — but removable options are also available on request.</p>
-        </div>
-      </div>
-
-      <div class="faq-item reveal d3 bg-white border border-gray-200 rounded-sm overflow-hidden">
-        <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-gray-900" onclick="toggleFaq(this)" aria-expanded="false">
           Do you offer a warranty on your work?
           <svg class="faq-icon flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -700,13 +696,23 @@
         </div>
       </div>
 
-      <div class="faq-item reveal d4 bg-white border border-gray-200 rounded-sm overflow-hidden">
+      <div class="faq-item reveal d3 bg-white border border-gray-200 rounded-sm overflow-hidden">
         <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-gray-900" onclick="toggleFaq(this)" aria-expanded="false">
-          Which areas of Surrey do you cover?
+          Can I remove the screens for winter?
           <svg class="faq-icon flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
         <div class="faq-body">
-          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">We cover the entire county — including Guildford, Woking, Reigate, Dorking, Epsom, Leatherhead, Farnham, Godalming, Haslemere, Caterham, Oxted, Weybridge, Esher, and Cobham. Not sure if we reach you? Just call or drop us a message.</p>
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Window screens are designed to be easily removed and stored without tools. Door and retractable screens can be left in place year-round — they're built to withstand British weather — but removable options are also available on request.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal d4 bg-white border border-gray-200 rounded-sm overflow-hidden">
+        <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-medium text-gray-900" onclick="toggleFaq(this)" aria-expanded="false">
+          Do you work on listed or heritage properties?
+          <svg class="faq-icon flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-body">
+          <p class="px-6 pb-5 text-gray-500 text-sm leading-relaxed">Yes — our retractable screen range is specifically designed with listed and heritage properties in mind. The 23mm housing cassette is unobtrusive and can often be fitted without planning permission. We assess each property individually and will advise during the free survey.</p>
         </div>
       </div>
 
