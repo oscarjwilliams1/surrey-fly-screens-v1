@@ -1,37 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" width="480" height="160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 108" width="360" height="108">
   <!-- White background -->
-  <rect width="480" height="160" fill="#ffffff" rx="16"/>
+  <rect width="360" height="108" fill="#ffffff" rx="12"/>
 
-  <!-- Dark outer circle -->
-  <circle cx="76" cy="80" r="62" fill="#1A3C2E"/>
+  <!-- Icon: solid green rounded square, 84×84, centered vertically -->
+  <!-- x=12, y=12, w=84, h=84 → rows 84/6=14px each, cols 84/3=28px each -->
+  <rect x="12" y="12" width="84" height="84" rx="9" fill="#2E6B4F"/>
 
-  <!-- Clip to icon rounded rect -->
-  <clipPath id="iconClip">
-    <rect x="41" y="45" width="70" height="70" rx="8"/>
+  <!-- Grid lines clipped to icon rect (equal spacing guaranteed) -->
+  <clipPath id="ic">
+    <rect x="12" y="12" width="84" height="84" rx="9"/>
   </clipPath>
-
-  <!-- Icon: solid filled rounded square (lighter green) -->
-  <rect x="41" y="45" width="70" height="70" rx="8" fill="#2E6B4F"/>
-
-  <!-- Fine grid lines: 7 horizontal + 2 vertical, clipped to icon -->
-  <g clip-path="url(#iconClip)" stroke="white" stroke-width="0.85" opacity="0.85">
-    <line x1="41" y1="55" x2="111" y2="55"/>
-    <line x1="41" y1="65" x2="111" y2="65"/>
-    <line x1="41" y1="75" x2="111" y2="75"/>
-    <line x1="41" y1="80" x2="111" y2="80"/>
-    <line x1="41" y1="90" x2="111" y2="90"/>
-    <line x1="41" y1="100" x2="111" y2="100"/>
-    <line x1="41" y1="108" x2="111" y2="108"/>
-    <line x1="64" y1="45" x2="64" y2="115"/>
-    <line x1="88" y1="45" x2="88" y2="115"/>
+  <g clip-path="url(#ic)" stroke="white" stroke-width="0.85" opacity="0.9">
+    <!-- 5 horizontal lines dividing into 6 equal rows of 14px -->
+    <line x1="12" y1="26" x2="96" y2="26"/>
+    <line x1="12" y1="40" x2="96" y2="40"/>
+    <line x1="12" y1="54" x2="96" y2="54"/>
+    <line x1="12" y1="68" x2="96" y2="68"/>
+    <line x1="12" y1="82" x2="96" y2="82"/>
+    <!-- 2 vertical lines dividing into 3 equal columns of 28px -->
+    <line x1="40" y1="12" x2="40" y2="96"/>
+    <line x1="68" y1="12" x2="68" y2="96"/>
   </g>
 
   <!-- Icon border -->
-  <rect x="41" y="45" width="70" height="70" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
+  <rect x="12" y="12" width="84" height="84" rx="9" fill="none" stroke="white" stroke-width="2"/>
 
-  <!-- Surrey -->
-  <text x="158" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="50" font-weight="700" fill="#1A3C2E" letter-spacing="-2">Surrey</text>
+  <!-- Surrey (baseline aligned to icon visual centre) -->
+  <text x="112" y="67" font-family="Georgia,'Times New Roman',serif" font-size="48" font-weight="700" fill="#1A3C2E" letter-spacing="-2">Surrey</text>
 
   <!-- FLY SCREENS -->
-  <text x="160" y="118" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="700" fill="#4A9B72" letter-spacing="5.5">FLY SCREENS</text>
+  <text x="114" y="90" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#4A9B72" letter-spacing="5">FLY SCREENS</text>
 </svg>
