@@ -1440,13 +1440,48 @@ function submitQuoteForm(e) {
   btn.disabled = true;
   btn.textContent = 'Sending…';
 
-  // Prototype — no real backend; show success state
-  setTimeout(() => {
-    document.getElementById('form-content').style.display = 'none';
-    const success = document.getElementById('form-success');
-    success.classList.remove('hidden');
-    success.style.display = 'flex';
-  }, 800);
+  const typeLabels = {
+    'window-screens': 'Window Screens',
+    'door-screens': 'Door Screens',
+    'bifold-screens': 'Bi-Fold Door Screens',
+    'retractable': 'Retractable Screens',
+    'custom': 'Custom / Other',
+    'unsure': 'Not Sure'
+  };
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: '719b16a5-b466-4d45-a35e-951c9552ad96',
+      subject: 'New Quote Request — Surrey Fly Screens',
+      from_name: 'Surrey Fly Screens Website',
+      name,
+      phone,
+      email,
+      postcode,
+      'Screen Type': typeLabels[type] || type,
+      'Additional Details': details || 'None provided'
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('form-content').style.display = 'none';
+      const success = document.getElementById('form-success');
+      success.classList.remove('hidden');
+      success.style.display = 'flex';
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Request Free Quote';
+      alert('Sorry, something went wrong. Please call us on 07783 903746.');
+    }
+  })
+  .catch(() => {
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Request Free Quote';
+    alert('Sorry, something went wrong. Please call us on 07783 903746.');
+  });
 }
 
 // ── Legal modals ──
